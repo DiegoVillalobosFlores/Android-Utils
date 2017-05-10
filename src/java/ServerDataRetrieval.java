@@ -1,5 +1,3 @@
-package moviles.cucei.udg.estacionamientocucei;
-
 import android.app.Activity;
 import android.content.Context;
 import android.nfc.Tag;
@@ -67,7 +65,7 @@ public class ServerDataRetrieval implements Serializable {
     }
     private static onResponseListener onResponseListener;
 
-    public static void getAppToken(final Context contexto, onResponseListener responseListener, String client_id, String client_secret){
+    public static void getAppToken(final Context context ,String url, String client_id, String client_secret, onResponseListener responseListener){
         onResponseListener = responseListener;
         header = client_id;
         header += ":" + client_secret;
@@ -88,11 +86,8 @@ public class ServerDataRetrieval implements Serializable {
                 error.printStackTrace();
             }
         };
-        String url;
-        url = contexto.getResources().getString(R.string.api_test);
-        url += contexto.getResources().getString(R.string.app_login);
         TokenRequest tokenRequest = new TokenRequest(Request.Method.POST,url,listener,errorListener);
-        RequestQueue requestQueue = Volley.newRequestQueue(contexto);
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(tokenRequest);
     }
 

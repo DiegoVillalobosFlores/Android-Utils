@@ -1,5 +1,3 @@
-package installred.installred.installred.installred;
-
 import android.content.Context;
 
 import java.io.FileInputStream;

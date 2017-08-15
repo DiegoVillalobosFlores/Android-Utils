@@ -1,5 +1,3 @@
-package installred.installred.installred.installred;
-
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
